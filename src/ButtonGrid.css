@@ -1,0 +1,22 @@
+.ButtonGrid {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    justify-content: space-around;
+}
+
+.ButtonGrid button {
+    aspect-ratio: 1 / 1;
+    width: 4rem;
+    border-radius: 30px;
+}
+
+.Symbols {
+    display: flex;
+    flex-direction: column;
+}
+
+.Numbers {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}

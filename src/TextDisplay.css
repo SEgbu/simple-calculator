@@ -1,0 +1,21 @@
+:root {
+    --bluegray: rgb(172,173,188);
+    --blue1: rgb(155, 158, 206);
+    --blue2: rgb(102, 101, 221);
+    --blue3: rgb(71, 59, 240);
+    --black: rgb(0, 5, 0);
+}
+
+.TextDisplay {      
+    background-color: var(--blue1);
+    
+    margin: 2rem;
+    padding: .25rem;
+    padding-right: 1rem;
+
+    font-size: x-large;
+    font-weight: 900;
+    text-align: end;
+
+    border-radius: 8px;
+}
