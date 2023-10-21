@@ -28,11 +28,11 @@ export const ButtonGrid:FC<ButtonGridProps> = ({textSetterProp : textSetter}) =>
                 <button onClick={() => textSetter("")}>AC</button>
             </div>      
             <div className="Symbols">
-                <button>+</button>
-                <button>-</button>
-                <button>*</button>
-                <button>/</button>
-                <button>=</button>
+                <button onClick={e => handleNumberClick(e)}>+</button>
+                <button onClick={e => handleNumberClick(e)}>-</button>
+                <button onClick={e => handleNumberClick(e)}>*</button>
+                <button onClick={e => handleNumberClick(e)}>/</button>
+                <button onClick={() => textSetter(currentText => eval(currentText))}>=</button>
             </div>     
         </div>
     )
