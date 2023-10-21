@@ -32,7 +32,12 @@ export const ButtonGrid:FC<ButtonGridProps> = ({textSetterProp : textSetter}) =>
                 <button onClick={e => handleNumberClick(e)}>-</button>
                 <button onClick={e => handleNumberClick(e)}>*</button>
                 <button onClick={e => handleNumberClick(e)}>/</button>
-                <button onClick={() => textSetter(currentText => eval(currentText))}>=</button>
+                <button onClick={() => textSetter(currentText => {
+                    const evaluate = (text : string) => {
+                        return new Function("return "+text)();
+                    }
+                    return evaluate(currentText);
+                })}>=</button>
             </div>     
         </div>
     )
