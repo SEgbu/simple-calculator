@@ -1,20 +1,18 @@
-import { FC, createContext, useState } from "react"
+import { FC, useState } from "react"
 import { ButtonGrid } from "./ButtonGrid";
 import { TextDisplay } from "./TextDisplay";
 import "./Calculator.css"
 
+
 export const Calculator : FC = () => {
-    const textStateArray = useState<string>("");
-    
-    const textOnScreenContext = createContext(textStateArray);
+
+    const [text, setText] = useState<string>("")    
 
     return (
-        <textOnScreenContext.Provider value={textStateArray}>
-            <div className="Calculator">
-                <TextDisplay />
-                <ButtonGrid />
-            </div>
-        </textOnScreenContext.Provider>
+        <div className="Calculator">
+                <TextDisplay textProp={text}/>
+                <ButtonGrid textSetterProp={setText}/>
+        </div>
     );
 }
 

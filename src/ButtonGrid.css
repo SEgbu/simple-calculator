@@ -1,3 +1,15 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --bluegray: rgb(172,173,188);
+    --blue1: rgb(155, 158, 206);
+    --blue2: rgb(102, 101, 221);
+    --blue3: rgb(71, 59, 240);
+    --black: rgb(0, 5, 0);
+}
+
 .ButtonGrid {
     display: flex;
     flex-direction: row;
@@ -6,17 +18,32 @@
 }
 
 .ButtonGrid button {
+    background-color: white;
+
     aspect-ratio: 1 / 1;
     width: 4rem;
     border-radius: 30px;
+
+    border-width: 0px;
+}
+
+.ButtonGrid button:hover {
+    background-color: var(--bluegray);
+}
+
+.ButtonGrid button:active {
+    background-color: var(--blue3);
 }
 
 .Symbols {
     display: flex;
     flex-direction: column;
+    gap: .5rem;
 }
 
 .Numbers {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    gap: .5rem;
+    align-items: center;
 }

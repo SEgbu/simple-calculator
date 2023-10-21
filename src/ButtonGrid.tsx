@@ -1,11 +1,15 @@
-import { FC, useContext } from "react";
+import { FC } from "react";
 import "./ButtonGrid.css"
 
-export const ButtonGrid:FC = () => {
-    const [textOnScreen, setTextOnScreen] = useContext(textOnScreenContext)
+type ButtonGridProps = {
+    textSetterProp : React.Dispatch<React.SetStateAction<string>>;
+}
+
+export const ButtonGrid:FC<ButtonGridProps> = ({textSetterProp : textSetter}) => {
 
     const handleNumberClick = (event : React.MouseEvent) => {
-        setTextOnScreen(currentTextOnScreen => currentTextOnScreen += event.currentTarget.innerHTML);
+        const temp = event.currentTarget.innerHTML;
+        textSetter(currentText => currentText += temp);
     }
     
     return (
@@ -21,7 +25,7 @@ export const ButtonGrid:FC = () => {
                 <button onClick={e => handleNumberClick(e)}>7</button>
                 <button onClick={e => handleNumberClick(e)}>8</button>
                 <button onClick={e => handleNumberClick(e)}>9</button>
-                <button>AC</button>
+                <button onClick={() => textSetter("")}>AC</button>
             </div>      
             <div className="Symbols">
                 <button>+</button>

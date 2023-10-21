@@ -1,13 +1,15 @@
-import { FC, useContext } from "react";
+import { FC } from "react";
 import "./TextDisplay.css"
 
-export const TextDisplay:FC = () => {
-    const [textOnScreen, setTextOnScreen] = useContext(textOnScreenContext);
+type TextDisplayProps = {
+    textProp : string;
+}
 
-    console.log(textOnScreen);
+export const TextDisplay : FC<TextDisplayProps> = ({textProp: text}) => {
+
     return (
         <div className="TextDisplay">
-            <p>{textOnScreen}</p>
+            <p>{text == "" ? "0" : text}</p>
         </div>
     )
 }

@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 :root {
     --bluegray: rgb(172,173,188);
     --blue1: rgb(155, 158, 206);
@@ -12,6 +16,7 @@
     margin: 2rem;
     padding: .25rem;
     padding-right: 1rem;
+    min-height: 3rem;
 
     font-size: x-large;
     font-weight: 900;

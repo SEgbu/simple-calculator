@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 :root {
     --bluegray: rgb(172,173,188);
     --blue1: rgb(155, 158, 206);
